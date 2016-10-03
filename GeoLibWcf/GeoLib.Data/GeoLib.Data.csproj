@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Entities\State.cs" />
     <Compile Include="Entities\ZipCode.cs" />
     <Compile Include="GeoLibDbContext.cs" />

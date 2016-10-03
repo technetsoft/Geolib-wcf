@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeoLib.Contracts
 {
@@ -19,7 +15,7 @@ namespace GeoLib.Contracts
         [OperationContract(Name = "GetZipsByState")]
         IEnumerable<ZipCodeData> GetZips(string state);
 
-        [OperationContract(Name = "GetZipsByRange")]
+        [OperationContract(Name = "GetZipsForRange")]
         IEnumerable<ZipCodeData> GetZips(string zip, int range);
     }
 }

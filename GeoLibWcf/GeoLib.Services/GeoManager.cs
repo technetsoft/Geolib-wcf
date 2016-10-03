@@ -10,14 +10,19 @@ namespace GeoLib.Services
         private IZipCodeRepository _zipCodeRepository = null;
         private IStateRepository _stateRepository = null;
 
-        public GeoManager(IZipCodeRepository zipCodeRepository)
+        public GeoManager()
         {
-            _zipCodeRepository = zipCodeRepository;
+            //Not implemented
+        }
+
+        public GeoManager(IZipCodeRepository zipCodeRepository)
+            : this(zipCodeRepository, null)
+        {
         }
 
         public GeoManager(IStateRepository stateRepository)
+            : this(null, stateRepository)
         {
-            _stateRepository = stateRepository;
         }
 
         public GeoManager(IZipCodeRepository zipCodeRepository, IStateRepository stateRepository)
@@ -28,7 +33,7 @@ namespace GeoLib.Services
 
         public ZipCodeData GetZipInfo(string zip)
         {
-            ZipCodeData zipCodeData = new ZipCodeData();
+            ZipCodeData zipCodeData = null;
 
             IZipCodeRepository zipCodeRepository = _zipCodeRepository ?? new ZipCodeRepository();
 
